@@ -3,31 +3,38 @@ import Social from '../components/social.astro';
 ---
 
 <style>
-    footer {
-        background-color: #f8f8f8; 
-        padding: 20px;
-        display: flex;
-        justify-content: center; /* Centra el contenido horizontalmente */
+   footer {
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Agrega espacio interno */
+    background-color: #f8f8f8; /* Color de fondo opcional */
     }
 
-    .footer-content {
-        text-align: center;
-        width: 100%;
-        }
+    footer p {
+        margin: 10px 0; /* Agrega margen arriba y abajo */
+    }
+
+    footer a {
+        color: #2E7D32; /* Color de los enlaces */
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
 </style>
     
-
+<Social/>
 
 <footer>
 
-    <Social />
-
     <p>&copy; 2025. Todos los derechos reservados.</p>
-        <p>Desarrollado por <a href=" " target="_blank">CodiPro</a></p>
+
+        <p>Desarrollado por <a href=" " target="_blank">CodiPro </a></p>
         <p>
-            <a href="/politica-privacidad">Política de Privacidad</a> |  
-            <a href="/terminos-condiciones">Términos y Condiciones</a> |  
-            <a href="/contacto">Contacto</a>
+
+        <a href="/politica-privacidad">Política de Privacidad</a> |  
+        <a href="/terminos-condiciones">Términos y Condiciones</a> |  
+        <a href="/contacto">Contacto</a>
     </p>
 
 </footer>
