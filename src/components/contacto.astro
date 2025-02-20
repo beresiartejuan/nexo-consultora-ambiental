@@ -1,0 +1,72 @@
+ <section id="formulario">
+    <h1>CONTACTATE CON NOSOTROS</h1>
+        <form action="https://formspree.io/f/meoevywb" method="POST">  
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+
+</section>
+
+<style>
+    .formulario {
+    background-color: #FFFFFF; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 500px;
+    margin: 20px auto;
+    }
+
+    .form-group {
+    margin-bottom: 15px;
+    }
+
+    label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2E7D32; /* Usamos color primario para las etiquetas */
+    }
+
+    input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    font-size: 14px;
+    }
+
+    textarea {
+    resize: vertical;
+    }
+
+    input:focus, textarea:focus {
+    border-color: #0288D1; /* Color de borde en foco */
+    outline: none;
+    }
+
+    .btn-submit {
+    background-color: #2E7D32; /* Color primario */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+    background-color: #0288D1; /* Cambio de color al pasar el mouse */
+    }
+</style>
+
