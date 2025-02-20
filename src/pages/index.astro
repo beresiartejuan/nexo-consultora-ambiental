@@ -4,6 +4,7 @@ import Footer from '../components/footer.astro';
 import Banner from '../components/banner.astro';
 import Equipo from '../components/equipo.astro';
 import Contacto from '../components/contacto.astro';
+import Navigation from '../components/navigation.astro';
 ---
 <!doctype html>
 <html lang="es">
@@ -20,7 +21,11 @@ import Contacto from '../components/contacto.astro';
     <body>
     
         <header>
-           <Banner/>
+            <section id="inicio">
+                <Navigation/>
+                <hr>
+                <Banner/>
+            </section<
         </header>
 
         <div class="parallax"> </div>
@@ -78,12 +83,15 @@ import Contacto from '../components/contacto.astro';
                 <h3>Beneficios de la sostenibilidad empresarial</h3>
                 <p>Conoce cómo las empresas pueden mejorar su rentabilidad y reputación aplicando prácticas sostenibles.</p>
             </article>
+
         </section>
-
+             
         <div class="parallax"> </div>
+        <section id="contacto">
+      
+            <Contacto/> 
 
-        <Contacto/> 
-
-        <Footer/>
+            <Footer/>
+        </section>
     </body>
 </html>
