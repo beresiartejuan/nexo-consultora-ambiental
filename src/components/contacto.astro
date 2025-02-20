@@ -9,7 +9,7 @@
             
             <label for="mensaje">Mensaje:</label>
             <textarea id="mensaje" name="mensaje" required></textarea>
-            
+            <br>
             <button type="submit">Enviar</button>
         </form>
 
@@ -20,9 +20,9 @@
     background-color: #FFFFFF; /* Fondo blanco */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    max-width: 500px;
-    margin: 20px auto;
+    box-shadow: 0 4px 8px #F5F5F5; /* Sombra suave */
+    max-width: 600px;
+    margin: 0 auto;
     }
 
     .form-group {
@@ -38,11 +38,15 @@
     }
 
     input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #DDD;
-    border-radius: 5px;
-    font-size: 14px;
+        width: 90%; /* Ajusta el ancho sin ocupar todo el contenedor */
+        max-width: 500px; /* Evita que se expandan demasiado */
+        padding: 10px;
+        border: 1px solid #DDD;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box; /* Asegura que padding no afecte el ancho total */
+        display: block; /* Asegura que no se desborden */
+        margin: 0 auto; /* Centra los campos dentro del formulario */
     }
 
     textarea {
@@ -69,4 +73,3 @@
     background-color: #0288D1; /* Cambio de color al pasar el mouse */
     }
 </style>
-
