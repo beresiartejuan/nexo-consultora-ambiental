@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Footer from '../components/footer.astro';
 import Banner from '../components/banner.astro';
+import Equipo from '../components/equipo.astro';
 ---
 <!doctype html>
 <html lang="es">
@@ -10,88 +11,96 @@ import Banner from '../components/banner.astro';
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="icon"
-            href="src\styles\images\favicon.ico"
+            href="src/styles/images/favicon.ico"
             type="image/x-icon"
         />
         <title>Nexo</title>
     </head>
     <body>
-    <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexo Consultora Ambiental</title>
-</head>
-<body>
+                    
 
-    <header>
-       <Banner/>
-    </header>
+        <header>
+            <Banner/>
+        </header>
 
-    <section id="nosotros">
-        <h2>Acerca de Nosotros</h2>
-        <p>Somos líderes en consultoría ambiental en el oeste pampeano. Nuestra misión es ofrecer soluciones sostenibles, impulsando el desarrollo responsable y el cuidado del medio ambiente.</p>
-    </section>
+        <div class="parallax"> </div>
 
-    <section id="servicios">
-        <h2>Servicios</h2>
-        <div class="servicio">
-            <h3>Estudios de Impacto Ambiental</h3>
-            <p>Evaluamos los efectos de proyectos en el entorno, asegurando el cumplimiento normativo y la sostenibilidad.</p>
+        <section id="nosotros">
+                <h2>Acerca de Nosotros</h2>
+                <p>Somos líderes en consultoría ambiental en el oeste pampeano. Nuestra misión es ofrecer soluciones sostenibles, impulsando el desarrollo responsable y el cuidado del medio ambiente.</p>
+        </section>
         </div>
-        <div class="servicio">
-            <h3>Gestión y Planificación Ambiental</h3>
-            <p>Desarrollamos estrategias para minimizar el impacto ambiental y optimizar el uso de recursos.</p>
-        </div>
-        <div class="servicio">
-            <h3>Auditorías de Sostenibilidad</h3>
-            <p>Analizamos el desempeño ambiental de empresas para promover mejores prácticas ecológicas.</p>
-        </div>
-    </section>
 
-    <section id="proyectos">
-        <h2>Proyectos Destacados</h2>
-        <p>Explora nuestros casos de éxito, donde hemos generado un impacto positivo en el medio ambiente.</p>
-        <!-- Aquí puedes agregar imágenes o enlaces a proyectos específicos -->
-    </section>
-
-    <section id="equipo">
-        <h2>Equipo</h2>
-        <p>Contamos con un equipo de expertos en sostenibilidad y medio ambiente, comprometidos con soluciones innovadoras.</p>
-        <!-- Aquí puedes incluir fotos del equipo -->
-    </section>
-
-    <section id="blog">
-        <h2>Blog</h2>
-        <article>
-            <h3>¿Por qué tu empresa necesita un estudio de impacto ambiental?</h3>
-            <p>Descubre la importancia de evaluar el impacto ambiental antes de iniciar cualquier proyecto.</p>
-        </article>
-        <article>
-            <h3>Beneficios de la sostenibilidad empresarial</h3>
-            <p>Conoce cómo las empresas pueden mejorar su rentabilidad y reputación aplicando prácticas sostenibles.</p>
-        </article>
-    </section>
-
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-            
-            <button type="submit">Enviar</button>
-        </form>
-        
-    </section>
-
-    <Footer/>
+        <div class="parallax"> </div>
     
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <div class="servicio">
+                <h3>Estudios de Impacto Ambiental</h3>
+                <p>Evaluamos los efectos de proyectos en el entorno, asegurando el cumplimiento normativo y la sostenibilidad.</p>
+            </div>
+            <div class="servicio">
+                <h3>Gestión y Planificación Ambiental</h3>
+                <p>Desarrollamos estrategias para minimizar el impacto ambiental y optimizar el uso de recursos.</p>
+            </div>
+            <div class="servicio">
+                <h3>Auditorías de Sostenibilidad</h3>
+                <p>Analizamos el desempeño ambiental de empresas para promover mejores prácticas ecológicas.</p>
+            </div>
+        </section>
+
+        <div class="parallax"> </div>
+
+        <section id="proyectos">
+            <h2>Proyectos Destacados</h2>
+            <p>Explora nuestros casos de éxito, donde hemos generado un impacto positivo en el medio ambiente.</p>
+            <!-- Aquí puedes agregar imágenes o enlaces a proyectos específicos -->
+        </section>
+
+        <div class="parallax"> </div>
+
+        <section id="equipo">
+            <h1><strong>NUESTRO EQUIPO</strong></h1>
+            <p><strong>Contamos con un equipo de expertos en sostenibilidad y medio ambiente, comprometidos con soluciones innovadoras.</strong></p>
+            <Equipo/>
+        </section>
+
+
+        <div class="parallax"> </div>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <article>
+                <h3>¿Por qué tu empresa necesita un estudio de impacto ambiental?</h3>
+                <p>Descubre la importancia de evaluar el impacto ambiental antes de iniciar cualquier proyecto.</p>
+            </article>
+            <article>
+                <h3>Beneficios de la sostenibilidad empresarial</h3>
+                <p>Conoce cómo las empresas pueden mejorar su rentabilidad y reputación aplicando prácticas sostenibles.</p>
+            </article>
+        </section>
+
+        <div class="parallax"> </div>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+            
+        </section>
+
+        <div class="parallax"> </div>
+
+        <Footer/> 
     </body>
 </html>
