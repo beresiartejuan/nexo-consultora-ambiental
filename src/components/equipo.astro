@@ -1,0 +1,87 @@
+---
+const equipo = [
+  { nombre: "Marcela Pérez", imagen: "/src/assets/Avatar1.png", linkedin: "#", descripcion: "Ingeniera en Recursos Naturales y Medio Ambiente, experta en cálculo de huella de carbono." },
+  { nombre: "Carla López", imagen: "/src/assets/Avatar2.png", linkedin: "#", descripcion: "Ingeniera en Recursos Naturales y Medio Ambiente, experta en auditorías ambientales." },
+  { nombre: "Andrea Gómez", imagen: "/src/assets/Avatar3.png", linkedin: "#", descripcion: "Progect Manager, experta en planificación, organización y supervición de proyectos." },
+];
+---
+
+
+<style>
+.equipo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.miembro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.miembro:nth-child(odd) {
+  flex-direction: row-reverse; /* Alternar imagen a la derecha */
+}
+
+.descripcion {
+  max-width: 60%;
+  font-size: 18px;
+}
+
+.perfil {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.perfil:hover {
+  opacity: 0; /* Oculta la imagen en hover */
+}
+
+.perfil-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.perfil-linkedin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../src/assets/linkedin-brands.svg'); /* Ícono de LinkedIn */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.perfil-container:hover .perfil-linkedin {
+  opacity: 1; /* Muestra LinkedIn en hover */
+}
+</style>
+
+<div class="equipo-container">
+  {equipo.map((persona) => (
+    <div class="miembro">
+      <div class="perfil-container">
+        <a href={persona.linkedin} target="_blank">
+          <img class="perfil" src={persona.imagen} alt={persona.nombre} />
+          <div class="perfil-linkedin"></div>
+        </a>
+      </div>
+      <div class="descripcion">
+        <h3>{persona.nombre}</h3>
+        <p>{persona.descripcion}</p>
+      </div>
+    </div>
+  ))}
+</div>
