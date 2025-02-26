@@ -7,18 +7,21 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  justify-content: center;
-  min-height: 100vh;  /* Asegura que el body tenga al menos el alto de la pantalla */
-  display: block;  /* Establece el flujo normal de bloque */
+  min-height: 100vh; 
+  overflow-x: hidden; /* Oculta cualquier desplazamiento horizontal */
 }
 
-/* Para centrar un contenedor específico (por ejemplo, un wrapper) */
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
+
 
 header {
     background-color: #FFFFFF;
@@ -121,10 +124,15 @@ select:focus {
   background-size: cover;
 }
 
-section {
-  position: relative;
-  padding-top: 80px; /* Ajusta según la altura de la barra */
-  margin-top: -80px; /* Desplaza la sección hacia arriba */
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll; /* En móviles no se fija */
+  }
 }
+
+section {
+  scroll-margin-top: 100px; /* Ajusta según la altura de tu navbar */
+}
+
 
 

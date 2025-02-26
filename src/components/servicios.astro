@@ -1,0 +1,64 @@
+<div class: "container">
+    <h2> Ofrecemos soluciones ambientales para diversos sectores</h2>
+
+    <ul class="lista-service">
+        <li>Estudios de impacto ambiental</li>
+        <li>Inscripción al registro de generadores de residuos peligrosos</li>
+        <li>Habilitación y renovación de canteras</li>
+        <li>Plan de Manejo de Bosque Nativo</li>
+        <li>Cambio de Uso de Suelo/desmonte</li>
+        <li>Plan de quema prescripta</li>
+        <li>Asesoramiento municipal en gestión ambiental</li>
+        <li>Capacitaciones en materia ambiental para diferentes niveles e instituciones</li>
+        <li>Servicio y asesoría en Seguridad e Higiene del trabajo</li>
+    </ul>
+</div>
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+    }
+
+    .lista-service {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-width: 800px;  /* Limita el ancho máximo de la lista */
+        width: 100%;
+    }
+
+
+    .lista-service li {
+        background-color: #FFFFFF; /* Fondo blanco */
+        border-left: 5px solid #0288D1; /* Línea izquierda azul */
+        color: #424242; /* Color de texto */
+        font-size: 18px;
+        padding: 12px 20px; /* Espaciado interno */
+        margin-bottom: 12px; /* Espaciado entre los elementos */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    }
+
+    .lista-service li:hover {
+        transform: translateX(10px); /* Desplazamiento a la derecha cuando se pasa el mouse */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Aumenta la sombra al pasar el mouse */
+    }
+
+        .lista-service li:before {
+        content: "✔"; /* Puedes cambiar el ícono de viñeta */
+        margin-right: 10px;
+        color: #2E7D32; /* Color verde para las viñetas */
+    }
+
+</style>
