@@ -4,27 +4,19 @@
 </section>
 
 <style>
-    .banner {
-        background-image: url("src/styles/images/Nexo full color sin fondo.png");
-        background-size: cover;  /* La imagen cubre todo el área sin distorsionarse */
-        background-position: center;
-        width: 100%;
-        height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: #FFFFFF;
-        padding: 20px;
-    }
-
-    .banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    }
-
-    .banner p {
-    font-size: 1.2rem;
+   .banner {
+    background-image: url("src/styles/images/Nexo full color sin fondo.png");
+    background-size: cover; /* O usa contain si sigue causando problemas */
+    background-position: center;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
     }
 </style>

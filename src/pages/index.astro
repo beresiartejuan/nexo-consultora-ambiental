@@ -5,6 +5,7 @@ import Banner from '../components/banner.astro';
 import Equipo from '../components/equipo.astro';
 import Contacto from '../components/contacto.astro';
 import Navigation from '../components/navigation.astro';
+import Servicios from '../components/servicios.astro';
 ---
 <!doctype html>
 <html lang="es">
@@ -39,19 +40,9 @@ import Navigation from '../components/navigation.astro';
         <div class="parallax"> </div>
     
         <section id="servicios">
-            <h2>Servicios</h2>
-            <div class="servicio">
-                <h3>Estudios de Impacto Ambiental</h3>
-                <p>Evaluamos los efectos de proyectos en el entorno, asegurando el cumplimiento normativo y la sostenibilidad.</p>
-            </div>
-            <div class="servicio">
-                <h3>Gestión y Planificación Ambiental</h3>
-                <p>Desarrollamos estrategias para minimizar el impacto ambiental y optimizar el uso de recursos.</p>
-            </div>
-            <div class="servicio">
-                <h3>Auditorías de Sostenibilidad</h3>
-                <p>Analizamos el desempeño ambiental de empresas para promover mejores prácticas ecológicas.</p>
-            </div>
+            <h1>Servicios</h1>
+                        
+            <Servicios/>
         </section>
 
         <div class="parallax"> </div>
