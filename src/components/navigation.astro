@@ -1,0 +1,52 @@
+---
+---
+
+<nav class="navbar">
+
+    <a href="#inicio">Inicio</a>
+
+    <a href="#nosotros">Sobre nosotros</a>
+
+    <a href="#servicios">Nuestros servicios</a>
+
+    <a href="#proyectos">Nuestros Proyectos</a>
+
+    <a href="#equipo">Nuestro Equipo</a>
+
+    <a href="#blog">Blog</a>
+
+    <a href="#contacto">Contáctanos</a>
+
+</nav>
+
+<style>
+    .navbar {
+        position: fixed; /* Fija la barra en la parte superior */
+        top: 0; /* La coloca en la parte superior */
+        left: 0;
+        width: 100%; /* Que ocupe todo el ancho */
+        background-color: #2E7D32; /* Color primario */
+        padding: 15px 0; /* Espaciado */
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+        z-index: 1000; /* Para que siempre esté encima */
+    }
+
+    .navbar a {
+        color: white; /* Color del texto */
+        text-decoration: none;
+        margin: 0 15px; /* Espaciado entre enlaces */
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .navbar a:hover {
+        color: #0288D1; /* Color azul al pasar el mouse */
+    }
+
+    /* Ajustar el contenido para que no quede debajo de la barra fija */
+    body {
+        padding-top: 60px; /* Ajustar según la altura de la barra */
+    }
+
+</style>

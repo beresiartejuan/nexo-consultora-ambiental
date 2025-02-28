@@ -1,0 +1,138 @@
+body {
+  background-color: #F5F5F5;
+  color: #424242;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-height: 100vh; 
+  overflow-x: hidden; /* Oculta cualquier desplazamiento horizontal */
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+header {
+    background-color: #FFFFFF;
+    color: #2E7D32 ;
+}
+header a {
+    color: #0288D1;
+}
+header a:hover {
+    color: #A1887F;
+}
+  
+button {
+  background-color: #2E7D32;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+button:hover {
+    background-color: #0288D1;
+}
+  
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #424242;
+}
+  
+h1,h2,h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  margin: 0 0 10px;
+  color: #2E7D32;
+}
+  
+h1 {
+  font-size: 2rem;
+}
+  
+h2 {
+  font-size: 1.5rem;
+}
+  
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.small-text {
+  font-size: 0.875rem;
+  color: #424242;
+}
+
+
+
+button {
+  background-color: #2E7D32;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #0288D1;
+}
+
+.error-message {
+  color: #D32F2F;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #A1887F;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #424242;
+}
+select:focus {
+  border-color: #0288D1;
+  outline: none;
+}
+
+.parallax {
+  background-image: url('/src/styles/images/wallpaper.us.jpeg');
+  height: 100px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll; /* En móviles no se fija */
+  }
+}
+
+section {
+  scroll-margin-top: 100px; /* Ajusta según la altura de tu navbar */
+}
+
+
+
