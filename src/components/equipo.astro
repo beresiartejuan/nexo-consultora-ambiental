@@ -9,12 +9,13 @@ const equipo = [
 
 <style>
 .equipo-container {
-  background-color: #F5F5F5;
+  background-color: #D3D3D3;
   display: flex;
   flex-direction: column;
   gap: 40px;
   max-width: 800px;
   margin: 0 auto;
+  
 }
 
 .miembro {
@@ -28,8 +29,10 @@ const equipo = [
 }
 
 .descripcion {
-  max-width: 60%;
-  font-size: 18px;
+  max-width: 58%;
+  font-size: 14px;
+  color: #2E7D32
+
 }
 
 .perfil {
@@ -68,6 +71,12 @@ const equipo = [
 .perfil-container:hover .perfil-linkedin {
   opacity: 1; /* Muestra LinkedIn en hover */
 }
+
+p {
+  font-size: 20px;
+  color: #5A5A5A;
+}
+
 </style>
 
 <div class="equipo-container">
@@ -80,8 +89,8 @@ const equipo = [
         </a>
       </div>
       <div class="descripcion">
-        <h3>{persona.nombre}</h3>
-        <p>{persona.descripcion}</p>
+        <p><strong>{persona.nombre}</p></strong>
+        <h2 class="subtitulo">{persona.descripcion}</h2>
       </div>
     </div>
   ))}
