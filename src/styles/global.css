@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #F5F5F5;
   color: #424242;
@@ -9,8 +13,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  min-height: 100vh; 
-  overflow-x: hidden; /* Oculta cualquier desplazamiento horizontal */
+  overflow-x: hidden !important; /* Oculta cualquier desplazamiento horizontal */
 }
 
 
@@ -124,6 +127,7 @@ select:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {

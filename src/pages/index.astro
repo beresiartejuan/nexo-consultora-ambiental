@@ -1,87 +1,90 @@
 ---
-import '../styles/global.css';
-import Footer from '../components/footer.astro';
-import Banner from '../components/banner.astro';
-import Equipo from '../components/equipo.astro';
-import Contacto from '../components/contacto.astro';
-import Navigation from '../components/navigation.astro';
-import Servicios from '../components/servicios.astro';
+import "../styles/global.css";
+import Footer from "../components/footer.astro";
+import Banner from "../components/banner.astro";
+import Equipo from "../components/equipo.astro";
+import Contacto from "../components/contacto.astro";
+import Navigation from "../components/navigation.astro";
+import Servicios from "../components/servicios.astro";
+import Layout from "../layouts/Layout.astro";
 ---
-<!doctype html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="icon"
-            href="src/styles/images/favicon.ico"
-            type="image/x-icon"
-        />
-        <title>Nexo</title>
-    </head>
-    <body>
-    
-        <header>
-            <section id="inicio">
-                <Navigation/>
-                <hr>
-                <Banner/>
-            </section>
-        </header>
 
-        <div class="parallax"> </div>
-
-        <section id="nosotros">
-                <h1 class="titulo">Acerca de Nosotros</h1>
-                <h2 class="subtitulo">Somos líderes en consultoría ambiental en el oeste pampeano. Nuestra misión es ofrecer soluciones sostenibles, impulsando el desarrollo responsable y el cuidado del medio ambiente.</h2>
+<Layout>
+    <Navigation />
+    <header>
+        <section id="inicio">
+            <Banner />
         </section>
-        </div>
+    </header>
 
-        <div class="parallax"> </div>
-    
-        <section id="servicios">
-            <h1 class="titulo">Servicios</h1>         
-            <Servicios/>
-        </section>
+    <div class="parallax"></div>
 
-        <div class="parallax"> </div>
+    <section id="nosotros">
+        <h1 class="titulo">Acerca de Nosotros</h1>
+        <h2 class="subtitulo">
+            Somos líderes en consultoría ambiental en el oeste pampeano. Nuestra
+            misión es ofrecer soluciones sostenibles, impulsando el desarrollo
+            responsable y el cuidado del medio ambiente.
+        </h2>
+    </section>
 
-        <section id="proyectos">
-            <h1 class="titulo">Proyectos Destacados</h1>
-            <h2 class="subtitulo">Explora nuestros casos de éxito, donde hemos generado un impacto positivo en el medio ambiente.</h2>
-            <!-- Aquí puedes agregar imágenes o enlaces a proyectos específicos -->
-        </section>
+    <div class="parallax"></div>
 
-        <div class="parallax"> </div>
+    <section id="servicios">
+        <h1 class="titulo">Servicios</h1>
+        <Servicios />
+    </section>
 
-        <section id="equipo">
-            <h1 class="titulo">NUESTRO EQUIPO</h1>
-            <h2 class="subtitulo">Contamos con un equipo de expertos en sostenibilidad y medio ambiente, comprometidos con soluciones innovadoras.</h2>
-            <Equipo/>
-        </section>
+    <div class="parallax"></div>
 
+    <section id="proyectos">
+        <h1 class="titulo">Proyectos Destacados</h1>
+        <h2 class="subtitulo">
+            Explora nuestros casos de éxito, donde hemos generado un impacto
+            positivo en el medio ambiente.
+        </h2>
+        <!-- Aquí puedes agregar imágenes o enlaces a proyectos específicos -->
+    </section>
 
-        <div class="parallax"> </div>
+    <div class="parallax"></div>
 
-        <section id="blog">
-            <h1 class="titulo">Blog</h1>
-            <article>
-                <h2 class="subtitulo">¿Por qué tu empresa necesita un estudio de impacto ambiental?</h2>
-                <h2 class="subtitulo">Descubre la importancia de evaluar el impacto ambiental antes de iniciar cualquier proyecto.</h2>
-            </article>
-            <article>
-                <h2 class="subtitulo">¿Beneficios de la sostenibilidad empresarial?</h2>
-                <h2 class="subtitulo">Conoce cómo las empresas pueden mejorar su rentabilidad y reputación aplicando prácticas sostenibles.</h2>
-            </article>
+    <section id="equipo">
+        <h1 class="titulo">NUESTRO EQUIPO</h1>
+        <h2 class="subtitulo">
+            Contamos con un equipo de expertos en sostenibilidad y medio
+            ambiente, comprometidos con soluciones innovadoras.
+        </h2>
+        <Equipo />
+    </section>
 
-        </section>
-             
-        <div class="parallax"> </div>
-        <section id="contacto">
-      
-            <Contacto/> 
+    <div class="parallax"></div>
 
-            <Footer/>
-        </section>
-    </body>
-</html>
+    <section id="blog">
+        <h1 class="titulo">Blog</h1>
+        <article>
+            <h2 class="subtitulo">
+                ¿Por qué tu empresa necesita un estudio de impacto ambiental?
+            </h2>
+            <h2 class="subtitulo">
+                Descubre la importancia de evaluar el impacto ambiental antes de
+                iniciar cualquier proyecto.
+            </h2>
+        </article>
+        <article>
+            <h2 class="subtitulo">
+                ¿Beneficios de la sostenibilidad empresarial?
+            </h2>
+            <h2 class="subtitulo">
+                Conoce cómo las empresas pueden mejorar su rentabilidad y
+                reputación aplicando prácticas sostenibles.
+            </h2>
+        </article>
+    </section>
+
+    <div class="parallax"></div>
+    <section id="contacto">
+        <Contacto />
+
+        <Footer />
+    </section>
+</Layout>
