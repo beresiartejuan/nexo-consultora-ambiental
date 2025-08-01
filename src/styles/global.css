@@ -9,10 +9,9 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  min-height: 100vh; 
-  overflow-x: hidden; /* Oculta cualquier desplazamiento horizontal */
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-
 
 .container {
   display: flex;
@@ -21,67 +20,22 @@ body {
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0;
-  margin-bottom: 0;
+  padding: 0 1rem;
   gap: 0;
 }
 
 header {
-    background-color: #FFFFFF;
-    color: #2E7D32 ;
+  background-color: #FFFFFF;
+  color: #2E7D32;
 }
+
 header a {
-    color: #0288D1;
+  color: #0288D1;
 }
+
 header a:hover {
-    color: #A1887F;
+  color: #A1887F;
 }
-  
-button {
-  background-color: #2E7D32;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-button:hover {
-    background-color: #0288D1;
-}
-  
-body, p { /* p global */
-  font-family: "Lato", sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  
-}
-
-/* Estilos globales para títulos y subtítulos */
-.titulo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 22px;
-  font-weight: 700; /* Negrita */
-  text-align: center; 
-  text-transform: uppercase; 
-  color: #2E7D32;
-}
-
-.subtitulo {
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 15px;
-  margin-top: 0;
-  color: #2E7D32;
-}
-
-
-.small-text {
-  font-size: 0.875rem;
-  color: #424242;
-}
-
 
 button {
   background-color: #2E7D32;
@@ -93,9 +47,42 @@ button {
   font-size: 16px;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  width: auto;
 }
+
 button:hover {
   background-color: #0288D1;
+}
+
+body, p {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Estilos globales para títulos y subtítulos */
+.titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2E7D32;
+}
+
+.subtitulo {
+  font-family: "Lato", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 0;
+  color: #2E7D32;
+}
+
+.small-text {
+  font-size: 0.875rem;
+  color: #424242;
 }
 
 .error-message {
@@ -112,13 +99,14 @@ select {
   background-color: #FFFFFF;
   color: #424242;
 }
+
 select:focus {
   border-color: #0288D1;
   outline: none;
 }
 
 .parallax {
-  background-image: url('/src/styles/images/wallpaper.us.jpeg');
+  background-image: url('/images/wallpaper.us.jpeg'); /* asegúrate de que esté en /public/images/ */
   height: 100px;
   background-attachment: fixed;
   background-position: center;
@@ -126,15 +114,40 @@ select:focus {
   background-size: cover;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
   .parallax {
-    background-attachment: scroll; /* En móviles no se fija */
+    background-attachment: scroll;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1rem;
   }
 }
 
 section {
-  scroll-margin-top: 100px; /* Ajusta según la altura de tu navbar */
+  scroll-margin-top: 100px;
 }
-
-
-
