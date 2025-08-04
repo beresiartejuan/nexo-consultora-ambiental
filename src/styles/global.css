@@ -107,7 +107,7 @@ select:focus {
 }
 
 .parallax {
-  background-image: url('/images/wallpaper.us.jpeg'); /* asegúrate de que esté en /public/images/ */
+  background-image: url('/images/wallpaper.us.jpeg'); /* Asegúrate de que esté en /public/images/ */
   height: 100px;
   background-attachment: fixed;
   background-position: center;
@@ -117,17 +117,19 @@ select:focus {
 
 @media (max-width: 768px) {
   body {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
   }
 
   .titulo {
     font-size: 1.5rem;
     padding: 0 1rem;
+    text-align: center;
   }
 
   .subtitulo {
     font-size: 1rem;
     padding: 0 1rem;
+    text-align: center;
   }
 
   .container {
@@ -140,6 +142,7 @@ select:focus {
 
   button {
     width: 100%;
+    max-width: 300px;
     font-size: 1rem;
   }
 
