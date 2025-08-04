@@ -1,54 +1,100 @@
 ---
 ---
-
 <nav class="navbar">
-
-    <a href="#inicio">Inicio</a>
-
-    <a href="#nosotros">Sobre nosotros</a>
-
-    <a href="#servicios">Nuestros servicios</a>
-
-    <a href="#proyectos">Nuestros proyectos</a>
-
-    <a href="#equipo">Nuestro equipo</a>
-
-    <a href="#blog">Blog</a>
-
-    <a href="#contacto">Contáctanos</a>
-
+  <div class="nav-container">
+    <div class="menu-toggle" id="menu-toggle">
+      &#9776; <!-- ícono hamburguesa -->
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Sobre nosotros</a>
+      <a href="#servicios">Nuestros servicios</a>
+      <a href="#equipo">Nuestro equipo</a>
+      <a href="#contacto">Contáctanos</a>
+    </div>
+  </div>
 </nav>
 
 <style>
-    .navbar {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2E7D32;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
 
-        position: fixed; /* Fija la barra en la parte superior */
-        top: 0; /* La coloca en la parte superior */
-        left: 0;
-        width: 100%; /* Que ocupe todo el ancho */
-        background-color: #2E7D32; /* Color primario */
-        padding: 15px 0; /* Espaciado */
-        text-align: center;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
-        z-index: 1000; /* Para que siempre esté encima */
+  .nav-container {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .nav-links a:hover {
+    color: #0288D1;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* 📱 Estilos para móviles */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
     }
-
-    .navbar a {
-        font-family: 'Poppins', sans-serif;
-        color: white; /* Color del texto */
-        text-decoration: none;
-        margin: 0 15px; /* Espaciado entre enlaces */
-        font-size: 18px;
-        font-weight: bold;
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #2E7D32;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      padding: 10px 0;
     }
-
-    .navbar a:hover {
-        color: #0288D1; /* Color azul al pasar el mouse */
+    .nav-links.show {
+      display: flex;
     }
-
-    /* Ajustar el contenido para que no quede debajo de la barra fija */
-    body {
-        padding-top: 60px; /* Ajustar según la altura de la barra */
+    .nav-links a {
+      padding: 10px;
+      text-align: right;
     }
+  }
 
+  body {
+    padding-top: 60px;
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("menu-toggle");
+    const links = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      links.classList.toggle("show");
+    });
+  });
+</script>
