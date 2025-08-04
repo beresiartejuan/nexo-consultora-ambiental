@@ -75,9 +75,10 @@ body, p {
   font-size: 1.125rem;
   font-weight: 400;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* arreglar el "px" que quedó sin valor */
   margin-top: 0;
   color: #2E7D32;
+  padding: 0 40px; /* 20px de espacio a los lados */
 }
 
 .small-text {
@@ -114,7 +115,6 @@ select:focus {
   background-size: cover;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   body {
     font-size: 14px;
