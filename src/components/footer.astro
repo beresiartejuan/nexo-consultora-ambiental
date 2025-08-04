@@ -3,44 +3,59 @@ import Social from '../components/social.astro';
 ---
 
 <style>
-footer {
-    text-align: center; /* Centra el texto */
-    padding: 20px; /* Agrega espacio interno */
-    background-color: #f8f8f8; /* Color de fondo opcional */
-    }
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f8f8;
+        }
 
-    footer p {
-        margin: 10px 0; /* Agrega margen arriba y abajo */
-    }
+        footer p {
+        margin: 10px 0;
+        }
 
-    footer a {
-        color: #2E7D32; /* Color de los enlaces */
+        footer a {
+        color: #2E7D32;
         text-decoration: none;
-    }
+        }
 
-    footer a:hover {
+        footer a:hover {
         text-decoration: underline;
         background-color: #0288D1;
     }
-</style>
+
     
+        footer iframe {
+        width: 100%;
+        max-width: 600px;
+        height: 450px;
+        border: 0;
+        display: block;
+        margin: 0 auto;
+        }
+        </style>
 
+    <footer>
 
-<footer>
     <Social/>
-    <p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.911549885702!2d-67.7192305!3d-37.768672099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96754aff541ea08d%3A0x351fac908f0ab91f!2sAlpachiri%20142%2C%20L8201%2025%20de%20Mayo%2C%20La%20Pampa!5e0!3m2!1ses!2sar!4v1739974448493!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">"Alpachiri 142, 25 de Mayo, La Pampa"</iframe>
-    </p>
-
-    <p>&copy; 2025. Todos los derechos reservados.</p>
-
-        <p>Desarrollado por <a href="https://www.linkedin.com/in/mar%C3%ADa-emilia-baz%C3%A1n-azargado-77593968/" target="_blank">Emilia Bazán </a>, <a href="https://www.linkedin.com/in/beresiartejuan/" target="_blank">Juan Beresiarte </a> y <a href="#" target="_blank">Fabricio Martinez </a>
-        </p>
         <p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.911549885702!2d-67.7192305!3d-37.768672099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96754aff541ea08d%3A0x351fac908f0ab91f!2sAlpachiri%20142%2C%20L8201%2025%20de%20Mayo%2C%20La%20Pampa!5e0!3m2!1ses!2sar!4v1739974448493!5m2!1ses!2sar"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </p>
 
-        <a href="/politica-privacidad">Política de Privacidad</a> |  
-        <a href="/terminos-condiciones">Términos y Condiciones</a> |  
-        <a href="/contacto">Contacto</a>
-    </p>
+        <p>&copy; 2025. Todos los derechos reservados.</p>
 
+        <p>
+            Desarrollado por <a href="https://www.linkedin.com/in/mar%C3%ADa-emilia-baz%C3%A1n-azargado-77593968/" target="_blank">Emilia Bazán</a>, 
+            <a href="https://www.linkedin.com/in/beresiartejuan/" target="_blank">Juan Beresiarte</a> y 
+            <a href="#" target="_blank">Fabricio Martinez</a>
+        </p>
+
+        <p>
+            <a href="/politica-privacidad">Política de Privacidad</a> |  
+            <a href="/terminos-condiciones">Términos y Condiciones</a> |  
+            <a href="/contacto">Contacto</a>
+        </p>
 </footer>
