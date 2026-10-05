@@ -68,6 +68,17 @@ import Social from '../components/social.astro';
     margin: 0 auto;
   }
 
+  /* Evita que el contenido desborde el grid en pantallas angostas (overflow en 320px) */
+  .contacto-info,
+  .formulario {
+    min-width: 0;
+  }
+
+  .contacto-datos a {
+    /* Emails largos ya no provocan overflow horizontal en móviles angostos */
+    overflow-wrap: anywhere;
+  }
+
   .contacto-info {
     display: flex;
     flex-direction: column;

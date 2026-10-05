@@ -33,9 +33,9 @@ const navItems = [
       </svg>
     </button>
 
-    <div class="nav-links" id="nav-links" role="menu">
+    <div class="nav-links" id="nav-links">
       {navItems.map((item) => (
-        <a href={item.href} role="menuitem">{item.label}</a>
+        <a href={item.href}>{item.label}</a>
       ))}
     </div>
   </div>
@@ -131,6 +131,19 @@ const navItems = [
     border-radius: 6px;
   }
 
+  /* El botón hamburguesa no debe heredar el width:100% ni el hover del botón global en móvil */
+  .menu-toggle {
+    width: auto;
+    transform: none;
+  }
+
+  .menu-toggle:hover,
+  .menu-toggle:focus-visible {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    transform: none;
+  }
+
   .menu-toggle .icon-close {
     display: none;
   }
@@ -148,6 +161,8 @@ const navItems = [
       display: flex;
       align-items: center;
       justify-content: center;
+      width: auto;
+      flex: 0 0 auto;
       margin-left: auto;
     }
 
@@ -161,9 +176,11 @@ const navItems = [
       width: 220px;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.35s ease;
+      transition: max-height 0.35s ease, padding 0.35s ease,
+        opacity 0.35s ease, visibility 0.35s;
       padding: 0;
       opacity: 0;
+      visibility: hidden;
       border-radius: 0 0 12px 12px;
       box-shadow: var(--sombra-hover);
     }
@@ -172,6 +189,7 @@ const navItems = [
       max-height: 500px;
       padding: 0.75rem 0;
       opacity: 1;
+      visibility: visible;
     }
 
     .nav-links a {
@@ -199,6 +217,10 @@ const navItems = [
     const updateAria = () => {
       const isOpen = navLinks.classList.contains("show");
       toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      toggle.setAttribute(
+        "aria-label",
+        isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
+      );
     };
 
     toggle.addEventListener("click", () => {
