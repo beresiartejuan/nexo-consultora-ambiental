@@ -207,7 +207,7 @@ label {
 }
 
 .parallax {
-  background-image: url('/images/wallpaper.us.jpeg');
+  background-image: url('/images/fondo-parallax.jpg');
   height: 160px;
   background-attachment: fixed;
   background-position: center;
