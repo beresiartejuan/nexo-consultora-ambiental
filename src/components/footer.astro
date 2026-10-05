@@ -6,56 +6,64 @@ import Social from '../components/social.astro';
     footer {
         text-align: center;
         padding: 20px;
-        background-color: #f8f8f8;
-        }
-
-        footer p {
-        margin: 10px 0;
-        }
-
-        footer a {
-        color: #2E7D32;
-        text-decoration: none;
-        }
-
-        footer a:hover {
-        text-decoration: underline;
-        background-color: #0288D1;
+        background-color: var(--color-gris-claro);
     }
 
-    
-        footer iframe {
+    footer p {
+        margin: 10px 0;
+    }
+
+    footer a {
+        color: var(--color-verde);
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+        color: var(--color-azul);
+        background-color: transparent;
+    }
+
+    footer iframe {
         width: 100%;
         max-width: 600px;
         height: 450px;
         border: 0;
         display: block;
         margin: 0 auto;
-        }
-        </style>
+    }
 
-    <footer>
+    @media (max-width: 768px) {
+        footer iframe {
+            height: 250px;
+        }
+    }
+</style>
+
+<footer>
 
     <Social/>
-        <p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.911549885702!2d-67.7192305!3d-37.768672099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96754aff541ea08d%3A0x351fac908f0ab91f!2sAlpachiri%20142%2C%20L8201%2025%20de%20Mayo%2C%20La%20Pampa!5e0!3m2!1ses!2sar!4v1739974448493!5m2!1ses!2sar"
+    <p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.911549885702!2d-67.7192305!3d-37.768672099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96754aff541ea08d%3A0x351fac908f0ab91f!2sAlpachiri%20142%2C%20L8201%2025%20de%20Mayo%2C%20La%20Pampa!5e0!3m2!1ses!2sar!4v1739974448493!5m2!1ses!2sar"
+            aria-label="Ubicación de Nexo Consultora Ambiental"
             allowfullscreen
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </p>
+        </iframe>
+    </p>
 
-        <p>&copy; 2025. Todos los derechos reservados.</p>
+    <p>&copy; 2025. Todos los derechos reservados.</p>
 
-        <p>
-            Desarrollado por <a href="https://www.linkedin.com/in/mar%C3%ADa-emilia-baz%C3%A1n-azargado-77593968/" target="_blank">Emilia Bazán</a>, 
-            <a href="https://www.linkedin.com/in/beresiartejuan/" target="_blank">Juan Beresiarte</a> y 
-            <a href="#" target="_blank">Fabricio Martinez</a>
-        </p>
+    <p>
+        Desarrollado por <a href="https://www.linkedin.com/in/mar%C3%ADa-emilia-baz%C3%A1n-azargado-77593968/" target="_blank">Emilia Bazán</a>,
+        <a href="https://www.linkedin.com/in/beresiartejuan/" target="_blank">Juan Beresiarte</a> y
+        <a href="#" target="_blank">Fabricio Martinez</a>
+    </p>
 
-        <p>
-            <a href="/politica-privacidad">Política de Privacidad</a> |  
-            <a href="/terminos-condiciones">Términos y Condiciones</a> |  
-            <a href="/contacto">Contacto</a>
-        </p>
+    <p>
+        <a href="#">Política de Privacidad</a> |
+        <a href="#">Términos y Condiciones</a> |
+        <a href="#contacto">Contacto</a>
+    </p>
 </footer>

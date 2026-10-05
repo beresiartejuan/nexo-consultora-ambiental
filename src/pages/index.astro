@@ -1,4 +1,5 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 import Footer from '../components/footer.astro';
 import Banner from '../components/banner.astro';
@@ -7,101 +8,68 @@ import Contacto from '../components/contacto.astro';
 import Navigation from '../components/navigation.astro';
 import Servicios from '../components/servicios.astro';
 ---
-<!doctype html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="icon"
-            href="/images/favicon.ico"
-            type="image/x-icon"
-        />
-        <title>Nexo consultora ambiental</title>
-        <meta name="google-site-verification" content="xMSBu0UN1e1c3oU_VTOjk-kTUlEXoP9y5IFpr3vtgvY" />sitemap-generator-cli https://tusitio.com -o sitemap.xml
-    </head>
-    
-    <body>
-    
-        <header>
-            <section id="inicio">
-                <Navigation/>
-                <hr>
-                <Banner/>
-            </section>
-        </header>
 
-        <div class="parallax"> </div>
+<Layout title="Nexo Consultora Ambiental">
+    <header>
+        <section id="inicio">
+            <Navigation />
+            <hr>
+            <Banner />
+        </section>
+    </header>
+
+    <main>
+        <div class="parallax"></div>
 
         <section id="nosotros">
-                <h1 class="titulo">Acerca de Nosotros</h1>
-                <h2 class="subtitulo">Nexo ambiental es un grupo interdisciplinario, que surge de las necesidades de diferentes
+            <h1 class="titulo">Acerca de Nosotros</h1>
+            <p class="subtitulo">
+                Nexo ambiental es un grupo interdisciplinario, que surge de las necesidades de diferentes
                 sectores productivos, entes públicos y privados en materia ambiental. <br>
                 Somos el <em>nexo</em> entre la legislación, el desarrollo sustentable y productivo, y lo que conlleva al
                 cuidado del medio ambiente. <br>
                 Nuestra <b>misión</b> es proporcionar servicios de calidad, con personal altamente capacitado
-                interpretando las necesidades y ayudando a resolverlas de manera eficiente y rápida.</h2>
+                interpretando las necesidades y ayudando a resolverlas de manera eficiente y rápida.
+            </p>
         </section>
-        </div>
 
-        <div class="parallax"> </div>
-    
+        <div class="parallax"></div>
+
         <section id="servicios">
             <h1 class="titulo">Servicios</h1>
-            <h2 class="subtitulo">Proporcionamos soluciones ambientales, estratégicas y orientación legal ambiental mediante
-                soporte y asesoramiento de calidad  <br> para ayudar a concretar los proyectos de nuestros clientes.
-                Además, somos el nexo entre el cliente y las autoridades de aplicación. <br>
-               <br> <b>Nuestro compromiso es:</b> <br>
-                <li> Generar conciencia y conductas ambientales, haciendo hincapié en las normativas
-                vigentes, <br> brindando capacitaciones en el sector educativo y municipal.</li>
-                <li> Garantizar que los procesos productivos sean eficientes y estén en armonía con el
+            <p class="subtitulo">
+                Proporcionamos soluciones ambientales, estratégicas y orientación legal ambiental mediante
+                soporte y asesoramiento de calidad para ayudar a concretar los proyectos de nuestros clientes.
+                Además, somos el nexo entre el cliente y las autoridades de aplicación.
+            </p>
+            <p class="subtitulo"><b>Nuestro compromiso es:</b></p>
+            <ul class="lista-valores">
+                <li>Generar conciencia y conductas ambientales, haciendo hincapié en las normativas
+                vigentes, brindando capacitaciones en el sector educativo y municipal.</li>
+                <li>Garantizar que los procesos productivos sean eficientes y estén en armonía con el
                 ambiente.</li>
-            </h2>         
-            <Servicios/>
+            </ul>
+            <Servicios />
         </section>
 
-        <div class="parallax"> </div>
-
-        <!-- <section id="proyectos">
-            <h1 class="titulo">Proyectos Destacados</h1>
-            <h2 class="subtitulo">Explora nuestros casos de éxito, donde hemos generado un impacto positivo en el medio ambiente.</h2>
-        </section>
-
-        <div class="parallax"> </div> -->
+        <div class="parallax"></div>
 
         <section id="equipo">
             <h1 class="titulo">NUESTRO EQUIPO</h1>
-            <h2 class="subtitulo">Contamos con un equipo multidisciplinario, especializado en diferentes áreas, <br>
-             tales como ingeniería ambiental, hidrogeología, edafología, fauna, flora, seguridad e higiene, entre otros;<br>
-             con capacidad y experiencia en servicios de distintas características.</h2>
-            <Equipo/>
+            <p class="subtitulo">
+                Contamos con un equipo multidisciplinario, especializado en diferentes áreas, <br>
+                tales como ingeniería ambiental, hidrogeología, edafología, fauna, flora, seguridad e higiene, entre otros;<br>
+                con capacidad y experiencia en servicios de distintas características.
+            </p>
+            <Equipo />
         </section>
 
-
-        <!-- <div class="parallax"> </div> 
-
-        <section id="blog">
-            <h1 class="titulo">Blog</h1>
-            <article>
-                <h2 class="subtitulo">¿Por qué tu empresa necesita un estudio de impacto ambiental?</h2>
-                <h2 class="subtitulo">Descubre la importancia de evaluar el impacto ambiental antes de iniciar cualquier proyecto.</h2>
-            </article>
-            <article>
-                <h2 class="subtitulo">¿Beneficios de la sostenibilidad empresarial?</h2>
-                <h2 class="subtitulo">Conoce cómo las empresas pueden mejorar su rentabilidad y reputación aplicando prácticas sostenibles.</h2>
-            </article>
-
-        </section>
-        -->
-             
-        <div class="parallax"> </div>
-        
+        <div class="parallax"></div>
 
         <section id="contacto">
-
-            <Contacto/> 
-
-            <Footer/>
+            <Contacto />
         </section>
-    </body>
-</html>
+    </main>
+
+    <Footer />
+</Layout>

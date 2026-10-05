@@ -1,28 +1,40 @@
- <section id="formulario">
+<div class="formulario" id="formulario">
     <h1 class="titulo">CONTACTATE CON NOSOTROS</h1>
-        <form action="https://formspree.io/f/meoevywb" method="POST">  
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-            <br>
-            <button type="submit">Enviar</button>
+        <form action="https://formspree.io/f/meoevywb" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: María González" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ej: maria@correo.com" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Escribí tu consulta..." required aria-required="true"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar</button>
         </form>
 
-</section>
+</div>
 
 <style>
     .formulario {
-    background-color: #FFFFFF; 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px #F5F5F5;
-    max-width: 600px;
-    margin: 0 auto;
+        background-color: var(--color-blanco);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .formulario form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .form-group {
@@ -34,19 +46,18 @@
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 5px;
-    color: #2E7D32; 
+    color: var(--color-verde);
     }
 
     input, textarea {
-        width: 90%; 
-        max-width: 500px; 
+        width: 100%;
+        max-width: 100%;
         padding: 10px;
-        border: 1px solid #DDD;
+        border: 1px solid var(--color-tierra);
         border-radius: 5px;
         font-size: 14px;
         box-sizing: border-box; /* Asegura que padding no afecte el ancho total */
         display: block; /* Asegura que no se desborden */
-        margin: 0 auto; /* Centra los campos dentro del formulario */
     }
 
     textarea {
@@ -54,22 +65,23 @@
     }
 
     input:focus, textarea:focus {
-    border-color: #0288D1; /* Color de borde en foco */
+    border: 2px solid var(--color-azul); /* Borde azul visible en foco */
     outline: none;
     }
 
     .btn-submit {
-    background-color: #2E7D32; /* Color primario */
-    color: #FFFFFF;
+    background-color: var(--color-verde); /* Color primario */
+    color: var(--color-blanco);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    align-self: center;
     }
 
     .btn-submit:hover {
-    background-color: #0288D1; 
+    background-color: var(--color-azul);
     }
 </style>

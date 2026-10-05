@@ -1,11 +1,22 @@
 ---
 ---
-<nav class="navbar">
+<nav class="navbar" aria-label="Navegación principal">
   <div class="nav-container">
-    <div class="menu-toggle" id="menu-toggle">
-      &#9776; <!-- ícono hamburguesa -->
+    <div
+      class="menu-toggle"
+      id="menu-toggle"
+      role="button"
+      tabindex="0"
+      aria-label="Abrir menú de navegación"
+      aria-expanded="false"
+    >
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <line x1="2" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <line x1="2" y1="18" x2="22" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
     </div>
-    <div class="nav-links" id="nav-links">
+    <div class="nav-links" id="nav-links" role="navigation">
       <a href="#inicio">Inicio</a>
       <a href="#nosotros">Sobre nosotros</a>
       <a href="#servicios">Nuestros servicios</a>
@@ -21,80 +32,119 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #2E7D32;
+    background-color: var(--color-verde);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
 
   .nav-container {
     display: flex;
-    justify-content: flex-start; 
+    justify-content: space-between;
     align-items: center;
     padding: 15px;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
   }
 
   .nav-links {
     display: flex;
     gap: 15px;
+    margin-left: auto;
   }
 
   .nav-links a {
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: var(--color-blanco);
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+    padding: 5px 0;
   }
 
   .nav-links a:hover {
-    color: #0288D1;
+    color: var(--color-azul);
   }
 
   .menu-toggle {
     display: none;
     font-size: 28px;
-    color: white;
+    color: var(--color-blanco);
     cursor: pointer;
   }
 
   /* 📱 Estilos para móviles */
   @media (max-width: 768px) {
     .menu-toggle {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
     }
+
     .nav-links {
-      display: none;
+      display: flex;
       flex-direction: column;
-      background-color: #2E7D32;
+      background-color: var(--color-verde);
       position: absolute;
       top: 60px;
       right: 0;
       width: 200px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0;
+    }
+
+    .nav-links.show {
+      max-height: 500px;
       padding: 10px 0;
     }
-    .nav-links.show {
-      display: flex;
-    }
+
     .nav-links a {
-      padding: 10px;
+      padding: 10px 15px;
       text-align: right;
     }
-  }
-
-  body {
-    padding-top: 60px;
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.getElementById("menu-toggle");
-    const links = document.getElementById("nav-links");
+    const navLinks = document.getElementById("nav-links");
+
+    const updateAria = () => {
+      const isOpen = navLinks.classList.contains("show");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    };
 
     toggle.addEventListener("click", () => {
-      links.classList.toggle("show");
+      navLinks.classList.toggle("show");
+      updateAria();
+    });
+
+    toggle.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        navLinks.classList.toggle("show");
+        updateAria();
+      }
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        updateAria();
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      const isClickInside =
+        navLinks.contains(event.target) || toggle.contains(event.target);
+      if (!isClickInside && navLinks.classList.contains("show")) {
+        navLinks.classList.remove("show");
+        updateAria();
+      }
     });
   });
 </script>

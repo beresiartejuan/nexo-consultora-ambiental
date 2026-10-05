@@ -17,7 +17,6 @@ const equipo = [
   gap: 40px;
   max-width: 800px;
   margin: 0 auto;
-  
 }
 
 .miembro {
@@ -27,14 +26,23 @@ const equipo = [
 }
 
 .miembro:nth-child(odd) {
-  flex-direction: row-reverse; 
+  flex-direction: row-reverse;
 }
 
 .descripcion {
   max-width: 58%;
   font-size: 14px;
-  color: #2E7D32
+  color: var(--color-gris-texto);
+}
 
+.descripcion strong {
+  color: var(--color-verde);
+}
+
+.nombre {
+  font-size: 1.25rem;
+  color: var(--color-verde);
+  margin: 0 0 0.5rem;
 }
 
 .perfil {
@@ -42,44 +50,68 @@ const equipo = [
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #ddd;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.perfil:hover {
-  opacity: 0; /* Oculta la imagen en hover */
+  border: 3px solid var(--color-gris-claro);
+  display: block;
 }
 
 .perfil-container {
   position: relative;
   width: 120px;
-  height: 140px;
+  height: 120px;
+  flex-shrink: 0;
 }
 
-.perfil-linkedin {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../src/assets/linkedin-brands.svg'); /* Ícono de LinkedIn */
-  background-size: cover;
-  background-position: center;
+.perfil-link {
+  display: block;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  opacity: 0; /* Oculto por defecto */
+  position: relative;
+}
+
+.perfil-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(46, 125, 50, 0.85);
+  border-radius: 50%;
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
-.perfil-container:hover .perfil-linkedin {
-  opacity: 1; /* Muestra LinkedIn en hover */
+.linkedin-icon {
+  position: absolute;
+  inset: 0;
+  width: 32px;
+  height: 32px;
+  margin: auto;
+  fill: var(--color-blanco);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
 }
 
-p {
-  font-size: 20px;
-  color: #5A5A5A;
+.perfil-link:hover::before,
+.perfil-link:focus-visible::before,
+.perfil-link:hover .linkedin-icon,
+.perfil-link:focus-visible .linkedin-icon {
+  opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .miembro {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .miembro:nth-child(odd) {
+    flex-direction: column;
+  }
+
+  .descripcion {
+    max-width: 100%;
+  }
+}
 </style>
 
 
@@ -88,14 +120,16 @@ p {
   {equipo.map((persona) => (
     <div class="miembro">
       <div class="perfil-container">
-        <a href={persona.linkedin} target="_blank">
-          <img class="perfil" src={persona.imagen} alt={persona.nombre} />
-          <div class="perfil-linkedin"></div>
+        <a class="perfil-link" href={persona.linkedin} target="_blank" aria-label={`LinkedIn de ${persona.nombre}`}>
+          <img class="perfil" src={persona.imagen} alt={persona.nombre} loading="lazy" />
+          <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.5c-1 0-1.5-.7-1.5-1.5s.5-1.5 1.5-1.5 1.5.7 1.5 1.5-.5 1.5-1.5 1.5zm13.5 11.5h-3v-5.5c0-1.5-.5-2.5-1.8-2.5-1 0-1.6.7-1.9 1.4-.1.3-.1.7-.1 1.1v5.5h-3v-10h2.9v1.4c.4-.7 1.3-1.7 3.2-1.7 2.3 0 4.1 1.5 4.1 4.7v5.6z"/>
+          </svg>
         </a>
       </div>
       <div class="descripcion">
-        <p><strong>{persona.nombre}</p></strong>
-        <h2 class="subtitulo">{persona.descripcion}</h2>
+        <p class="nombre"><strong>{persona.nombre}</strong></p>
+        <p class="subtitulo">{persona.descripcion}</p>
       </div>
     </div>
   ))}

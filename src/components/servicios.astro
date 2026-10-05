@@ -16,12 +16,6 @@
 </div>
 
 <style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-    }
-
     .container {
         display: flex;
         flex-direction: column;
@@ -41,9 +35,9 @@
 
 
     .lista-service li {
-        background-color: #FFFFFF; /* Fondo blanco */
-        border-left: 5px solid #0288D1; /* Línea izquierda azul */
-        color: #5A5A5A; /* Color de texto */
+        background-color: var(--color-blanco); /* Fondo blanco */
+        border-left: 5px solid var(--color-azul); /* Línea izquierda azul */
+        color: var(--color-gris-medio); /* Color de texto */
         font-size: 18px;
         padding: 12px 20px; /* Espaciado interno */
         margin-bottom: 12px; /* Espaciado entre los elementos */
@@ -61,7 +55,7 @@
         .lista-service li:before {
         content: "✔"; /* Puedes cambiar el ícono de viñeta */
         margin-right: 10px;
-        color: #2E7D32; /* Color verde para las viñetas */
+        color: var(--color-verde); /* Color verde para las viñetas */
     }
 
 </style>
