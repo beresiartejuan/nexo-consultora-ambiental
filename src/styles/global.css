@@ -1,37 +1,64 @@
 :root {
   --color-verde: #2E7D32;
+  --color-verde-oscuro: #1B5E20;
+  --color-verde-claro: #E8F5E9;
+  --color-verde-transparente: rgba(46, 125, 50, 0.08);
   --color-azul: #0288D1;
+  --color-azul-claro: #E1F5FE;
   --color-gris-texto: #424242;
   --color-gris-claro: #F5F5F5;
   --color-blanco: #FFFFFF;
   --color-gris-medio: #5A5A5A;
   --color-tierra: #A1887F;
+  --color-tierra-claro: #EFEBE9;
   --color-error: #D32F2F;
+  --sombra: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --sombra-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --radio: 12px;
+  --transicion: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--color-gris-claro);
+  background-color: var(--color-blanco);
   color: var(--color-gris-texto);
   font-family: "Lato", sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
-  padding-top: 60px;
-  text-align: center;
+  text-align: left;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
-  gap: 0;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-alt {
+  background-color: var(--color-verde-claro);
 }
 
 header {
@@ -39,47 +66,67 @@ header {
   color: var(--color-verde);
 }
 
-header a {
+a {
   color: var(--color-azul);
+  text-decoration: none;
+  transition: color var(--transicion);
 }
 
-header a:hover {
+a:hover {
   color: var(--color-tierra);
 }
 
-button {
+button, .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   background-color: var(--color-verde);
   color: var(--color-blanco);
-  padding: 12px 20px;
+  padding: 0.875rem 1.75rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 999px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  transition: background-color var(--transicion), transform var(--transicion), box-shadow var(--transicion);
   width: auto;
 }
 
-button:hover {
+button:hover, .btn:hover {
   background-color: var(--color-azul);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-hover);
 }
 
-body, p {
+button:focus-visible, .btn:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-azul);
+  outline-offset: 2px;
+}
+
+p, li {
   font-family: "Lato", sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 1.0625rem;
+  line-height: 1.7;
 }
 
 /* Estilos globales para títulos y subtítulos */
 .titulo {
   font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   color: var(--color-verde);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   line-height: 1.2;
+  margin: 0 0 1.5rem;
+}
+
+.titulo span {
+  color: var(--color-azul);
 }
 
 .subtitulo {
@@ -87,26 +134,36 @@ body, p {
   font-size: 1.125rem;
   font-weight: 400;
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 0;
-  color: var(--color-verde);
-  padding: 0 40px;
+  margin: 0 auto 1.5rem;
+  color: var(--color-gris-medio);
+  max-width: 800px;
+  line-height: 1.7;
 }
 
 .lista-valores {
   font-family: "Lato", sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   font-weight: 400;
   text-align: center;
-  color: var(--color-verde);
+  color: var(--color-gris-texto);
   list-style: none;
-  padding: 0 40px;
-  margin: 0 auto 20px;
+  padding: 0;
+  margin: 0 auto 1.5rem;
   max-width: 800px;
 }
 
 .lista-valores li {
-  margin-bottom: 10px;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.lista-valores li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-verde);
+  font-weight: 700;
 }
 
 .small-text {
@@ -120,71 +177,79 @@ body, p {
   margin-bottom: 10px;
 }
 
-select {
+select, input, textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--color-tierra);
-  border-radius: 5px;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-tierra-claro);
+  border-radius: 8px;
   background-color: var(--color-blanco);
   color: var(--color-gris-texto);
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
 }
 
-select:focus {
+select:focus, input:focus, textarea:focus {
   border-color: var(--color-azul);
   outline: none;
+  box-shadow: 0 0 0 3px var(--color-azul-claro);
+}
+
+label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--color-verde-oscuro);
+  font-family: "Poppins", sans-serif;
 }
 
 .parallax {
-  background-image: url('/images/wallpaper.us.jpeg'); /* Asegúrate de que esté en /public/images/ */
-  height: 100px;
+  background-image: url('/images/wallpaper.us.jpeg');
+  height: 160px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  clip-path: ellipse(120% 100% at 50% 100%);
+}
+
+.parallax::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(46,125,50,0.75), rgba(2,136,209,0.45));
 }
 
 section {
-  scroll-margin-top: 100px;
-  padding: 2rem 0;
+  scroll-margin-top: 80px;
 }
 
 @media (max-width: 768px) {
   body {
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.9375rem;
+  }
+
+  .section {
+    padding: 3rem 0;
   }
 
   .titulo {
-    font-size: 1.5rem;
-    padding: 0 1rem;
-    text-align: center;
+    padding: 0;
   }
 
   .subtitulo {
-    font-size: 1rem;
-    padding: 0 1rem;
-    text-align: center;
-  }
-
-  .lista-valores {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-
-  .container {
-    padding: 0 1rem;
+    padding: 0;
   }
 
   .parallax {
     background-attachment: scroll;
+    height: 100px;
   }
 
-  button {
+  button, .btn {
     width: 100%;
-    max-width: 300px;
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 1rem;
+    max-width: 320px;
   }
 }

@@ -1,27 +1,42 @@
 ---
+const navItems = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Sobre nosotros", href: "#nosotros" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Equipo", href: "#equipo" },
+  { label: "Contacto", href: "#contacto" },
+];
 ---
+
 <nav class="navbar" aria-label="Navegación principal">
   <div class="nav-container">
-    <div
+    <a href="#inicio" class="nav-logo" aria-label="Nexo Consultora Ambiental - Ir al inicio">
+      <img src="/images/Nexo isotipo blanco sin fondo.png" alt="" width="40" height="40" />
+      <span>Nexo</span>
+    </a>
+
+    <button
       class="menu-toggle"
       id="menu-toggle"
-      role="button"
-      tabindex="0"
       aria-label="Abrir menú de navegación"
       aria-expanded="false"
+      aria-controls="nav-links"
     >
-      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
-        <line x1="2" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        <line x1="2" y1="18" x2="22" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <svg class="icon-open" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
       </svg>
-    </div>
-    <div class="nav-links" id="nav-links" role="navigation">
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Sobre nosotros</a>
-      <a href="#servicios">Nuestros servicios</a>
-      <a href="#equipo">Nuestro equipo</a>
-      <a href="#contacto">Contáctanos</a>
+      <svg class="icon-close" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+      </svg>
+    </button>
+
+    <div class="nav-links" id="nav-links" role="menu">
+      {navItems.map((item) => (
+        <a href={item.href} role="menuitem">{item.label}</a>
+      ))}
     </div>
   </div>
 </nav>
@@ -33,7 +48,7 @@
     left: 0;
     width: 100%;
     background-color: var(--color-verde);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
 
@@ -41,29 +56,68 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 0.75rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
   }
 
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--color-blanco);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+
+  .nav-logo:hover {
+    color: var(--color-azul-claro);
+  }
+
+  .nav-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
   .nav-links {
     display: flex;
-    gap: 15px;
-    margin-left: auto;
+    align-items: center;
+    gap: 1.75rem;
   }
 
   .nav-links a {
     font-family: 'Poppins', sans-serif;
     color: var(--color-blanco);
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 5px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.35rem 0;
+    position: relative;
   }
 
-  .nav-links a:hover {
-    color: var(--color-azul);
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-azul);
+    transition: width var(--transicion);
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: var(--color-blanco);
+  }
+
+  .nav-links a:hover::after,
+  .nav-links a:focus-visible::after {
+    width: 100%;
   }
 
   .menu-toggle {
@@ -71,9 +125,24 @@
     font-size: 28px;
     color: var(--color-blanco);
     cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+    border-radius: 6px;
   }
 
-  /* 📱 Estilos para móviles */
+  .menu-toggle .icon-close {
+    display: none;
+  }
+
+  .menu-toggle[aria-expanded="true"] .icon-open {
+    display: none;
+  }
+
+  .menu-toggle[aria-expanded="true"] .icon-close {
+    display: block;
+  }
+
   @media (max-width: 768px) {
     .menu-toggle {
       display: flex;
@@ -87,23 +156,37 @@
       flex-direction: column;
       background-color: var(--color-verde);
       position: absolute;
-      top: 60px;
-      right: 0;
-      width: 200px;
+      top: 100%;
+      right: 1rem;
+      width: 220px;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
+      transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.35s ease;
       padding: 0;
+      opacity: 0;
+      border-radius: 0 0 12px 12px;
+      box-shadow: var(--sombra-hover);
     }
 
     .nav-links.show {
       max-height: 500px;
-      padding: 10px 0;
+      padding: 0.75rem 0;
+      opacity: 1;
     }
 
     .nav-links a {
-      padding: 10px 15px;
+      padding: 0.75rem 1.25rem;
       text-align: right;
+      width: 100%;
+    }
+
+    .nav-links a::after {
+      display: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background-color: rgba(255, 255, 255, 0.1);
     }
   }
 </style>

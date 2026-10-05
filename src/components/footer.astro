@@ -2,68 +2,168 @@
 import Social from '../components/social.astro';
 ---
 
-<style>
-    footer {
-        text-align: center;
-        padding: 20px;
-        background-color: var(--color-gris-claro);
-    }
-
-    footer p {
-        margin: 10px 0;
-    }
-
-    footer a {
-        color: var(--color-verde);
-        text-decoration: none;
-    }
-
-    footer a:hover {
-        text-decoration: underline;
-        color: var(--color-azul);
-        background-color: transparent;
-    }
-
-    footer iframe {
-        width: 100%;
-        max-width: 600px;
-        height: 450px;
-        border: 0;
-        display: block;
-        margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-        footer iframe {
-            height: 250px;
-        }
-    }
-</style>
-
 <footer>
+  <div class="footer-container container">
+    <div class="footer-brand">
+      <img src="/images/Nexo isotipo blanco sin fondo.png" alt="" width="48" height="48" />
+      <strong>Nexo Consultora Ambiental</strong>
+      <p>Consultora ambiental interdisciplinaria en La Pampa, Argentina.</p>
+      <Social />
+    </div>
 
-    <Social/>
-    <p>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.911549885702!2d-67.7192305!3d-37.768672099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96754aff541ea08d%3A0x351fac908f0ab91f!2sAlpachiri%20142%2C%20L8201%2025%20de%20Mayo%2C%20La%20Pampa!5e0!3m2!1ses!2sar!4v1739974448493!5m2!1ses!2sar"
-            aria-label="Ubicación de Nexo Consultora Ambiental"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </p>
+    <div class="footer-links">
+      <h3>Secciones</h3>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Sobre nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
 
-    <p>&copy; 2025. Todos los derechos reservados.</p>
+    <div class="footer-map">
+      <h3>Ubicación</h3>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.911549885702!2d-67.7192305!3d-37.768672099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96754aff541ea08d%3A0x351fac908f0ab91f!2sAlpachiri%20142%2C%20L8201%2025%20de%20Mayo%2C%20La%20Pampa!5e0!3m2!1ses!2sar!4v1739974448493!5m2!1ses!2sar"
+        aria-label="Ubicación de Nexo Consultora Ambiental"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
 
-    <p>
-        Desarrollado por <a href="https://www.linkedin.com/in/mar%C3%ADa-emilia-baz%C3%A1n-azargado-77593968/" target="_blank">Emilia Bazán</a>,
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 Nexo Consultora Ambiental. Todos los derechos reservados.</p>
+      <p class="footer-credits">
+        Desarrollado por
+        <a href="https://www.linkedin.com/in/mar%C3%ADa-emilia-baz%C3%A1n-azargado-77593968/" target="_blank">Emilia Bazán</a>,
         <a href="https://www.linkedin.com/in/beresiartejuan/" target="_blank">Juan Beresiarte</a> y
-        <a href="#" target="_blank">Fabricio Martinez</a>
-    </p>
-
-    <p>
-        <a href="#">Política de Privacidad</a> |
-        <a href="#">Términos y Condiciones</a> |
+        <a href="#" target="_blank">Fabricio Martinez</a>.
+      </p>
+      <p class="footer-legal">
+        <a href="#">Política de Privacidad</a> ·
+        <a href="#">Términos y Condiciones</a> ·
         <a href="#contacto">Contacto</a>
-    </p>
+      </p>
+    </div>
+  </div>
 </footer>
+
+<style>
+  footer {
+    background: linear-gradient(180deg, var(--color-verde-oscuro) 0%, var(--color-verde) 100%);
+    color: var(--color-blanco);
+    padding-top: 3rem;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .footer-brand img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer-brand strong {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+  }
+
+  .footer-brand p {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .footer-links h3,
+  .footer-map h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin: 0 0 1rem;
+    color: var(--color-blanco);
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color var(--transicion), transform var(--transicion);
+    display: inline-block;
+  }
+
+  .footer-links a:hover,
+  .footer-links a:focus-visible {
+    color: var(--color-blanco);
+    transform: translateX(4px);
+  }
+
+  .footer-map iframe {
+    width: 100%;
+    height: 180px;
+    border: 0;
+    border-radius: var(--radio);
+    display: block;
+  }
+
+  .footer-bottom {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 1.25rem 0;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    margin: 0.35rem 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+  }
+
+  .footer-bottom a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .footer-bottom a:hover,
+  .footer-bottom a:focus-visible {
+    color: var(--color-blanco);
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      align-items: center;
+    }
+
+    .footer-map iframe {
+      height: 220px;
+    }
+  }
+</style>

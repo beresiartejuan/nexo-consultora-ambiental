@@ -25,3 +25,9 @@ pnpm-debug.log*
 
 # pnpm store when configured to be local
 .pnpm-store/
+
+# screenshots and mcp artifacts
+.playwright-mcp/
+current_fullpage.png
+design_*.png
+

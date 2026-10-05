@@ -10,66 +10,151 @@ import Servicios from '../components/servicios.astro';
 ---
 
 <Layout title="Nexo Consultora Ambiental">
+    <Navigation />
+
     <header>
-        <section id="inicio">
-            <Navigation />
-            <hr>
-            <Banner />
-        </section>
+        <Banner />
     </header>
 
     <main>
-        <div class="parallax"></div>
-
-        <section id="nosotros">
-            <h1 class="titulo">Acerca de Nosotros</h1>
-            <p class="subtitulo">
-                Nexo ambiental es un grupo interdisciplinario, que surge de las necesidades de diferentes
-                sectores productivos, entes públicos y privados en materia ambiental. <br>
-                Somos el <em>nexo</em> entre la legislación, el desarrollo sustentable y productivo, y lo que conlleva al
-                cuidado del medio ambiente. <br>
-                Nuestra <b>misión</b> es proporcionar servicios de calidad, con personal altamente capacitado
-                interpretando las necesidades y ayudando a resolverlas de manera eficiente y rápida.
-            </p>
+        <section id="nosotros" class="section section-alt">
+            <div class="container">
+                <h1 class="titulo">Acerca de <span>Nosotros</span></h1>
+                <p class="subtitulo">
+                    Nexo ambiental es un grupo interdisciplinario que surge de las necesidades de diferentes
+                    sectores productivos, entes públicos y privados en materia ambiental.
+                </p>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <span class="about-icon" aria-hidden="true">🌿</span>
+                        <h2>¿Quiénes somos?</h2>
+                        <p>
+                            Somos el <em>nexo</em> entre la legislación, el desarrollo sustentable y productivo, y lo que conlleva al
+                            cuidado del medio ambiente.
+                        </p>
+                    </div>
+                    <div class="about-card mission">
+                        <span class="about-icon" aria-hidden="true">🎯</span>
+                        <h2>Nuestra misión</h2>
+                        <p>
+                            Proporcionar servicios de calidad, con personal altamente capacitado,
+                            interpretando las necesidades y ayudando a resolverlas de manera eficiente y rápida.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <div class="parallax"></div>
+        <div class="parallax" aria-hidden="true"></div>
 
-        <section id="servicios">
-            <h1 class="titulo">Servicios</h1>
-            <p class="subtitulo">
-                Proporcionamos soluciones ambientales, estratégicas y orientación legal ambiental mediante
-                soporte y asesoramiento de calidad para ayudar a concretar los proyectos de nuestros clientes.
-                Además, somos el nexo entre el cliente y las autoridades de aplicación.
-            </p>
-            <p class="subtitulo"><b>Nuestro compromiso es:</b></p>
-            <ul class="lista-valores">
-                <li>Generar conciencia y conductas ambientales, haciendo hincapié en las normativas
-                vigentes, brindando capacitaciones en el sector educativo y municipal.</li>
-                <li>Garantizar que los procesos productivos sean eficientes y estén en armonía con el
-                ambiente.</li>
-            </ul>
-            <Servicios />
+        <section id="servicios" class="section">
+            <div class="container">
+                <h1 class="titulo">Nuestros <span>Servicios</span></h1>
+                <p class="subtitulo">
+                    Proporcionamos soluciones ambientales, estratégicas y orientación legal ambiental mediante
+                    soporte y asesoramiento de calidad para ayudar a concretar los proyectos de nuestros clientes.
+                    Además, somos el nexo entre el cliente y las autoridades de aplicación.
+                </p>
+                <p class="subtitulo"><strong>Nuestro compromiso es:</strong></p>
+                <ul class="lista-valores">
+                    <li>Generar conciencia y conductas ambientales, haciendo hincapié en las normativas
+                    vigentes, brindando capacitaciones en el sector educativo y municipal.</li>
+                    <li>Garantizar que los procesos productivos sean eficientes y estén en armonía con el
+                    ambiente.</li>
+                </ul>
+                <Servicios />
+            </div>
         </section>
 
-        <div class="parallax"></div>
-
-        <section id="equipo">
-            <h1 class="titulo">NUESTRO EQUIPO</h1>
-            <p class="subtitulo">
-                Contamos con un equipo multidisciplinario, especializado en diferentes áreas, <br>
-                tales como ingeniería ambiental, hidrogeología, edafología, fauna, flora, seguridad e higiene, entre otros;<br>
-                con capacidad y experiencia en servicios de distintas características.
-            </p>
-            <Equipo />
+        <section id="equipo" class="section section-alt">
+            <div class="container">
+                <h1 class="titulo">Nuestro <span>Equipo</span></h1>
+                <p class="subtitulo">
+                    Contamos con un equipo multidisciplinario, especializado en diferentes áreas,
+                    tales como ingeniería ambiental, hidrogeología, edafología, fauna, flora, seguridad e higiene, entre otros;
+                    con capacidad y experiencia en servicios de distintas características.
+                </p>
+                <Equipo />
+            </div>
         </section>
 
-        <div class="parallax"></div>
+        <div class="parallax" aria-hidden="true"></div>
 
-        <section id="contacto">
-            <Contacto />
+        <section id="contacto" class="section">
+            <div class="container">
+                <h1 class="titulo">Contactate con <span>Nosotros</span></h1>
+                <Contacto />
+            </div>
         </section>
     </main>
 
     <Footer />
 </Layout>
+
+<style>
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 900px;
+        margin: 2.5rem auto 0;
+    }
+
+    .about-card {
+        background-color: var(--color-blanco);
+        border-radius: var(--radio);
+        padding: 2rem;
+        box-shadow: var(--sombra);
+        text-align: center;
+        transition: transform var(--transicion), box-shadow var(--transicion);
+    }
+
+    .about-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--sombra-hover);
+    }
+
+    .about-card.mission {
+        border-top: 4px solid var(--color-azul);
+    }
+
+    .about-card:not(.mission) {
+        border-top: 4px solid var(--color-verde);
+    }
+
+    .about-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background-color: var(--color-verde-claro);
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-card h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.25rem;
+        color: var(--color-verde-oscuro);
+        margin: 0 0 0.75rem;
+    }
+
+    .about-card p {
+        color: var(--color-gris-medio);
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-top: 1.75rem;
+        }
+
+        .about-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

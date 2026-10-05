@@ -1,23 +1,162 @@
 
-<section class="banner">
-    
+<section class="hero" id="inicio">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-content container">
+    <div class="hero-visual">
+      <img src="/images/Nexo full color sin fondo.png" alt="Nexo Consultora Ambiental" width="420" height="auto" />
+    </div>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Consultora ambiental interdisciplinaria</p>
+      <h1 class="hero-title">Somos el <em>nexo</em> entre la legislación, el desarrollo sustentable y el cuidado del medio ambiente.</h1>
+      <p class="hero-lead">Asesoramiento, trámites, estudios y capacitación ambiental para empresas, entes públicos y privados en La Pampa y Argentina.</p>
+      <a href="#contacto" class="btn hero-cta">Conocé nuestros servicios</a>
+    </div>
+  </div>
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="var(--color-gris-claro)"></path>
+    </svg>
+  </div>
 </section>
 
 <style>
-.banner {
-    background-image: url("/images/Nexo full color sin fondo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.hero {
+  position: relative;
+  padding: 8rem 0 3rem;
+  background-color: var(--color-blanco);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-verde-claro) 0%, var(--color-azul-claro) 100%);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  opacity: 0.45;
+}
+
+.hero-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-visual img {
+  max-width: 420px;
+  width: 100%;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.1));
+}
+
+.hero-text {
+  max-width: 540px;
+}
+
+.hero-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-verde);
+  margin: 0 0 0.75rem;
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-gris-texto);
+  margin: 0 0 1rem;
+}
+
+.hero-title em {
+  color: var(--color-verde);
+  font-style: normal;
+  position: relative;
+}
+
+.hero-title em::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-azul-claro);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.hero-lead {
+  font-size: 1.125rem;
+  color: var(--color-gris-medio);
+  margin: 0 0 1.75rem;
+}
+
+.hero-cta {
+  width: auto;
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  line-height: 0;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 0 0;
+  }
+
+  .hero-bg {
     width: 100%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 100%);
+    opacity: 0.25;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
     text-align: center;
-    color: var(--color-blanco);
-    padding: 20px;
-    box-sizing: border-box; 
-    }
+    gap: 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-visual img {
+    max-width: 260px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-cta {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-wave {
+    display: none;
+  }
+}
 </style>

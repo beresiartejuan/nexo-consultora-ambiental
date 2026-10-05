@@ -1,87 +1,181 @@
-<div class="formulario" id="formulario">
-    <h1 class="titulo">CONTACTATE CON NOSOTROS</h1>
-        <form action="https://formspree.io/f/meoevywb" method="POST">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej: María González" required aria-required="true">
-            </div>
+---
+import Social from '../components/social.astro';
+---
 
-            <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" placeholder="Ej: maria@correo.com" required aria-required="true">
-            </div>
+<div class="contacto-layout" id="formulario">
+  <div class="contacto-info">
+    <h2 class="contacto-title">Escribinos y empecemos a trabajar juntos</h2>
+    <p class="contacto-lead">
+      ¿Tenés un proyecto, una consulta o necesitás asesoramiento ambiental? Estamos para ayudarte.
+    </p>
 
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" placeholder="Escribí tu consulta..." required aria-required="true"></textarea>
-            </div>
+    <ul class="contacto-datos">
+      <li>
+        <span class="dato-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </span>
+        <a href="mailto:nexoambientalconsultora@gmail.com">nexoambientalconsultora@gmail.com</a>
+      </li>
+      <li>
+        <span class="dato-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <a href="tel:+5492334404548">+54 9 2334 40-4548</a>
+      </li>
+      <li>
+        <span class="dato-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span>Alpachiri 142, 25 de Mayo, La Pampa</span>
+      </li>
+    </ul>
 
-            <button type="submit" class="btn-submit">Enviar</button>
-        </form>
+    <div class="contacto-social">
+      <p>Seguinos en nuestras redes</p>
+      <Social />
+    </div>
+  </div>
 
+  <div class="formulario">
+    <form action="https://formspree.io/f/meoevywb" method="POST">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: María González" required aria-required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Ej: maria@correo.com" required aria-required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribí tu consulta..." required aria-required="true" rows="5"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Enviar mensaje</button>
+    </form>
+  </div>
 </div>
 
 <style>
-    .formulario {
-        background-color: var(--color-blanco);
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        margin: 0 auto;
-    }
+  .contacto-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
-    .formulario form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
+  .contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-    .form-group {
-    margin-bottom: 15px;
-    }
+  .contacto-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    color: var(--color-verde-oscuro);
+    margin: 0;
+    line-height: 1.25;
+  }
 
-    label {
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 5px;
+  .contacto-lead {
+    color: var(--color-gris-medio);
+    margin: 0;
+  }
+
+  .contacto-datos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contacto-datos li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-gris-texto);
+  }
+
+  .dato-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--color-verde-claro);
     color: var(--color-verde);
-    }
+    flex-shrink: 0;
+  }
 
-    input, textarea {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px;
-        border: 1px solid var(--color-tierra);
-        border-radius: 5px;
-        font-size: 14px;
-        box-sizing: border-box; /* Asegura que padding no afecte el ancho total */
-        display: block; /* Asegura que no se desborden */
-    }
+  .contacto-datos a {
+    color: var(--color-azul);
+    font-weight: 600;
+  }
 
-    textarea {
-    resize: vertical;
-    }
+  .contacto-datos a:hover {
+    color: var(--color-verde);
+    text-decoration: underline;
+  }
 
-    input:focus, textarea:focus {
-    border: 2px solid var(--color-azul); /* Borde azul visible en foco */
-    outline: none;
-    }
+  .contacto-social p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--color-verde-oscuro);
+    margin: 0 0 0.75rem;
+  }
 
-    .btn-submit {
-    background-color: var(--color-verde); /* Color primario */
+  .formulario {
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+  }
+
+  .formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    margin: 0;
+  }
+
+  .btn-submit {
+    background-color: var(--color-verde);
     color: var(--color-blanco);
-    padding: 10px 20px;
+    padding: 0.875rem 1.75rem;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: center;
+    transition: background-color var(--transicion), transform var(--transicion);
+    align-self: stretch;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .btn-submit:hover {
+    background-color: var(--color-azul);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .contacto-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
-    .btn-submit:hover {
-    background-color: var(--color-azul);
+    .formulario {
+      padding: 1.5rem;
     }
+  }
 </style>
