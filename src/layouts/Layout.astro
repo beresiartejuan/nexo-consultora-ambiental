@@ -1,8 +1,14 @@
 ---
 interface Props {
 	title?: string;
+	description?: string;
 }
-const { title = 'Nexo Consultora Ambiental' } = Astro.props;
+const {
+	title = 'Nexo Consultora Ambiental - Consultoría ambiental en La Pampa',
+	description = 'Consultora ambiental interdisciplinaria en La Pampa: estudios de impacto ambiental, trámites y habilitaciones, planes de manejo, seguridad e higiene y capacitaciones para empresas y entes públicos.',
+} = Astro.props;
+const siteUrl = 'https://nexo-consultora-ambiental.vercel.app';
+const ogImage = `${siteUrl}/images/og-image.jpg`;
 ---
 
 <!doctype html>
@@ -10,18 +16,58 @@ const { title = 'Nexo Consultora Ambiental' } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Nexo Consultora Ambiental ofrece asesoría, trámites, estudios y capacitación ambiental para empresas, entes públicos y privados. Desarrollo sustentable en La Pampa y Argentina." />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={Astro.url ? new URL(Astro.url.pathname, siteUrl).href : siteUrl} />
 		<meta name="generator" content={Astro.generator} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content="Consultora ambiental interdisciplinaria: asesoramiento legal, trámites, estudios y capacitación para un desarrollo sustentable." />
+
+		<!-- Open Graph -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://nexo-consultora-ambiental.vercel.app" />
-		<meta property="og:image" content="https://nexo-consultora-ambiental.vercel.app/images/nexo-logo-color.png" />
+		<meta property="og:site_name" content="Nexo Consultora Ambiental" />
+		<meta property="og:locale" content="es_AR" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={Astro.url ? new URL(Astro.url.pathname, siteUrl).href : siteUrl} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:secure_url" content={ogImage} />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Nexo Consultora Ambiental — Somos el nexo entre la legislación, el desarrollo sustentable y el cuidado del medio ambiente" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content="Nexo Consultora Ambiental — Consultoría ambiental interdisciplinaria en La Pampa" />
+
+		<meta name="theme-color" content="#2E7D32" />
 		<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet" />
-		<title>{title}</title>
+
+		<!-- Datos estructurados: negocio local -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'ProfessionalService',
+			name: 'Nexo Consultora Ambiental',
+			description: 'Consultora ambiental interdisciplinaria: asesoramiento legal ambiental, trámites, estudios de impacto, planes de manejo y capacitación ambiental.',
+			url: siteUrl,
+			image: ogImage,
+			telephone: '+54 9 2334 40-4548',
+			email: 'nexoambientalconsultora@gmail.com',
+			address: {
+				'@type': 'PostalAddress',
+				streetAddress: 'Alpachiri 142',
+				addressLocality: '25 de Mayo',
+				addressRegion: 'La Pampa',
+				addressCountry: 'AR',
+			},
+			areaServed: ['La Pampa', 'Argentina'],
+			sameAs: ['https://www.instagram.com/nexoambiental'],
+		})}></script>
 	</head>
 	<body>
 		<slot />
